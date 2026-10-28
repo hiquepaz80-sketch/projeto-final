@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!-- Declara que o documento é HTML5 -->
+<html lang="pt-BR">
+<!-- Idioma da página: português do Brasil -->
+
+<!-- ==================================================================
+     CABEÇALHO TÉCNICO (HEAD)
+     Informações que não aparecem na página, mas configuram o site
+     ================================================================== -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Permite usar acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz o site se adaptar bem em celular -->
+
+    <title>Modelo</title> <!-- Título que aparece na aba do navegador -->
+
+    <link rel="stylesheet" href="estilo.css">
+    <!-- Conecta o HTML com o arquivo de estilo (CSS) -->
+</head>
+
+
+<!-- ==================================================================
+     CORPO DA PÁGINA (BODY)
+     Tudo o que aparece na tela fica aqui dentro
+     ================================================================== -->
+
+<body id='body' onload="carregar()">
+    <!-- Quando a página carrega, executa a função "carregar()" do JavaScript -->
+
+
+    <!-- ============================================================
+         MÚSICA DE FUNDO
+         Toca sozinha (autoplay), repete (loop) e começa sem som (muted)
+         ============================================================ -->
+    <audio id="musica" autoplay loop muted>
+        <source src="lofi.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- ============================================================
+         TOPO DA PÁGINA (HEADER)
+         ============================================================ -->
+    <header>
+        <h1>Bem Vindo</h1>
+        <!-- Título principal da página -->
+         <!-- ============================================================
+         BOTÕES INTERATIVOS
+         Cada botão chama uma função do arquivo script.js
+         ============================================================ -->
+        <!-- Botões interativos (chamam funções do script.js) -->
+        <div class="botoes-so">
+            <input type="button" value="windowls" onclick="windowls()">
+            <input type="button" value="macOS" onclick="macos()">
+            <input type="button" value="linux" onclick="linux()">
+            <input type="button" value="android" onclick="android()">
+            <input type="button" value="ios" onclick="ios()">
+        </div>
+    </header>
+    <!-- ============================================================
+     MENU DE NAVEGAÇÃO
+     Cada botão rola a página até a section com o id correspondente
+     ============================================================ -->
+    <nav class="menu">
+        <a href="#proposta">Proposta</a>
+        <a href="#o-que-sao">O que são SO</a>
+        <a href="#tipos">Tipos</a>
+        <a href="#historia">História</a>
+        <a href="#comparativo">Comparativo</a>
+    </nav>
+
+
+    <!-- ============================================================
+         ÁREA PRINCIPAL DO CONTEÚDO
+         O id="sac" foi mantido para o CSS continuar funcionando.
+         Dentro dela, cada tópico agora é uma <section> separada:
+           1) Proposta do Site
+           2) O que são Sistemas Operacionais?
+           3) Tipos de Sistemas Operacionais
+           4) História dos Sistemas Operacionais
+           5) Comparativo entre Sistemas Operacionais
+         ============================================================ -->
+    
+
+
+        <!-- ========================================================
+             SECTION 1 — PROPOSTA DO SITE
+             Apresenta o que a pessoa vai aprender na página
+             ======================================================== -->
+        <section id="proposta">
+
+            <!-- Título da seção -->
+            <div class="titulo">
+                <h1>
+                    Proposta do Site
+                </h1>
+            </div>
+
+            <!-- Lista com os assuntos que serão abordados -->
+            <p><strong>Aprender sobre:</strong></p>
+            <ul class="a">
+                <li>O que são Sistemas Operacionais?</li>
+                <li>Tipos de Sistemas Operacionais</li>
+                <li>História dos Sistemas Operacionais</li>
+                <li>Comparativo entre Sistemas Operacionais</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ========================================================
+             SECTION 2 — O QUE SÃO SISTEMAS OPERACIONAIS?
+             Explica o conceito, as funções e os componentes do SO
+             ======================================================== -->
+        <section id="o-que-sao" class="os">
+
+            <!-- Título numerado do tópico 1 -->
+            <ol>
+                <h2>
+                    <li>O que são Sistemas Operacionais?</li>
+                </h2>
+            </ol>
+
+            <!-- Parágrafo 1: definição geral do SO -->
+            <p>O sistema operacional (SO) é o software fundamental que transforma um conjunto de circuitos
+                eletrônicos em uma máquina útil. Em termos simples, ele atua como o intermediário definitivo entre o
+                hardware (as peças físicas do computador) e os softwares (os aplicativos que utilizamos). Sem o SO,
+                um editor de texto ou um navegador de internet não conseguiriam se comunicar com a tela, o teclado
+                ou o processador. Ele funciona como o maestro de uma orquestra ou o gerente de uma empresa: organiza
+                os recursos, dita as regras e garante que cada programa receba a atenção necessária para funcionar
+                sem que o sistema entre em colapso.</p>
+
+            <!-- Parágrafo 2: gerenciamento de processos e memória -->
+            <p>Para manter toda essa estrutura funcionando de forma harmoniosa, o sistema operacional desempenha
+                várias funções críticas nos bastidores. A primeira delas é o gerenciamento de processos, que
+                consiste em coordenar quais programas estão utilizando o processador (CPU) a cada milissegundo,
+                permitindo que você ouça música e navegue na web ao mesmo tempo. Paralelamente, o SO faz o
+                gerenciamento de memória, distribuindo o espaço disponível na memória RAM para os aplicativos
+                abertos e resgatando esse espaço assim que eles são fechados.</p>
+
+            <!-- Parágrafo 3: arquivos e dispositivos de entrada/saída -->
+            <p>Além de gerenciar o que acontece em tempo real, o sistema também cuida do armazenamento e da
+                comunicação externa. Através do gerenciamento de arquivos, ele organiza como os dados são gravados e
+                lidos no SSD ou HD, estruturando as informações na forma de pastas e arquivos que conseguimos
+                entender. Por fim, o gerenciamento de dispositivos de entrada e saída (E/S) controla o fluxo de
+                dados entre o computador e seus periféricos, garantindo que o clique do mouse, a digitação no
+                teclado ou o envio de um documento para a impressora ocorram sem falhas.</p>
+
+            <!-- Parágrafo 4: Kernel e Interface do Usuário -->
+            <p>Toda essa engrenagem é sustentada por componentes essenciais, com destaque para o Kernel e a
+                Interface do Usuário. O Kernel é o núcleo inquebrável do sistema operacional, a parte mais profunda
+                do software que conversa diretamente com os componentes físicos e executa as ordens mais críticas de
+                segurança e controle. Por outro lado, a Interface do Usuário é a camada externa que nos permite
+                interagir com a máquina. Ela pode ser visual, como a Interface Gráfica (GUI) repleta de ícones e
+                janelas do Windows e do Android, ou textual, como a Interface de Linha de Comando (CLI) dos
+                terminais de programação, traduzindo a complexidade interna do computador em ações simples para o
+                nosso dia a dia.</p>
+
+        </section>
+
+
+        <!-- ========================================================
+             SECTION 3 — TIPOS DE SISTEMAS OPERACIONAIS
+             Divide os sistemas em: Desktop, Móveis/Embarcados e Servidores
+             ======================================================== -->
+        <section id="tipos">
+
+            <!-- Título numerado do tópico 2 (start="2" faz a lista começar no número 2) -->
+            <ol start="2">
+                <h2>
+                    <li>Tipos de Sistemas Operacionais</li>
+                </h2>
+            </ol>
+
+            <!-- ---------- Subtópico: Sistemas para Desktop ---------- -->
+            <h2>Sistemas para Desktop</h2>
+            <p>Esses sistemas são projetados para computadores de mesa e notebooks, focando na produtividade geral,
+                entretenimento e na interação direta com o usuário através de interfaces visuais ricas.</p>
+            <ul>
+                <li>Windows: É o sistema operacional mais popular do mundo para computadores pessoais.
+                    Desenvolvido pela Microsoft, destaca-se por sua enorme compatibilidade com jogos, softwares
+                    profissionais e grande variedade de hardwares.</li>
+
+                <p>
+                    <li>macOS: Sistema exclusivo dos computadores da Apple (MacBook e iMac). Suas principais
+                        características são a alta estabilidade, o design elegante da interface, a segurança robusta
+                        e a
+                        integração perfeita com o ecossistema de dispositivos da marca.</li>
+                </p>
+                <p>
+                    <li>Distribuições Linux (como Ubuntu, Fedora e Mint): São sistemas baseados em código aberto, o
+                        que significa que qualquer pessoa pode modificar e distribuir o software. São amplamente
+                        conhecidos por serem gratuitos, leves, altamente customizáveis e muito seguros.
+                    </li>
+                </p>
+            </ul>
+
+            <!-- ---------- Subtópico: Sistemas Móveis e Embarcados ---------- -->
+            <h2>Sistemas para Dispositivos Móveis e Embarcados</h2>
+            <p>Criados especificamente para smartphones, tablets e dispositivos vestíveis, esses sistemas priorizam
+                a eficiência energética, a conectividade sem fio e telas sensíveis ao toque.</p>
+            <ul>
+                <li>Android: Desenvolvido pela Google, é o sistema móvel mais utilizado no planeta. Por ter código
+                    aberto, é adotado por diversas marcas de celulares (como Samsung, Motorola e Xiaomi),
+                    destacando-se por sua alta capacidade de personalização e grande ecossistema de aplicativos.
+                </li>
+                <p>
+                    <li>iOS: Sistema exclusivo dos iPhones da Apple. Caracteriza-se por seu ecossistema fechado e
+                        controlado, o que garante atualizações rápidas, excelente otimização de bateria, desempenho
+                        fluido e um alto nível de segurança de dados.</li>
+                </p>
+                <p>
+                    <li>Sistemas Embarcados: São sistemas simplificados e dedicados a executar apenas uma tarefa
+                        específica dentro de um hardware limitado. Eles controlam desde aparelhos domésticos (como
+                        smart TVs e micro-ondas) até sistemas automotivos e relógios inteligentes.
+                    </li>
+                </p>
+            </ul>
+
+            <!-- ---------- Subtópico: Sistemas para Servidores ---------- -->
+            <h2>Sistemas para Servidores</h2>
+            <p>Esses sistemas são os motores da internet e de redes corporativas. Eles não priorizam interfaces
+                bonitas, mas sim a capacidade de processar dados massivos, estabilidade contínua (ficar anos sem
+                reiniciar) e segurança extrema.</p>
+            <ul>
+                <li>Linux para Servidores (como Red Hat, Debian e Ubuntu Server): É o líder absoluto no mercado de
+                    servidores e computação em nuvem. A maioria dos sites e aplicativos que usamos hoje roda em
+                    Linux devido à sua estabilidade impecável, segurança avançada e por não exigir uma interface
+                    gráfica pesada para operar.</li>
+                <p>
+                    <li>Windows Server: Versão da Microsoft voltada para o ambiente corporativo. É muito utilizado
+                        em grandes empresas que dependem de ferramentas específicas da marca, facilitando o
+                        gerenciamento centralizado de usuários, redes internas, bancos de dados e permissões de
+                        segurança.</li>
+                </p>
+            </ul>
+
+        </section>
+
+
+        <!-- ========================================================
+             SECTION 4 — HISTÓRIA DOS SISTEMAS OPERACIONAIS
+             Conta a evolução: cartões perfurados, Unix, MS-DOS,
+             Windows e Linux
+             ======================================================== -->
+        <section id="historia">
+
+            <!-- Título numerado do tópico 3 -->
+            <ol start="3">
+                <h2>
+                    <li>História dos Sistemas Operacionais</li>
+                </h2>
+            </ol>
+
+            <!-- Introdução curta do tópico -->
+            <p>A evolução dos Sistemas Operacionais (SO) acompanha diretamente o desenvolvimento do hardware. O que começou com salas inteiras cheias de válvulas hoje cabe no nosso bolso.</p>
+
+            <!-- Subtítulo da linha do tempo -->
+            <h2>Linha do Tempo: Os Marcos dos Sistemas Operacionais</h2>
+
+            <!-- Parágrafo 1: décadas de 1950 e 1960 (batch, multiprogramação, Unix) -->
+            <p>A evolução dos sistemas operacionais acompanha diretamente o desenvolvimento do hardware, transformando máquinas que antes ocupavam salas inteiras em dispositivos que hoje cabem na palma da mão. Nos primórdios da computação, na década de 1950, os computadores não possuíam um sistema operacional; os programadores interagiam diretamente com os circuitos por meio de cartões perfurados em um modelo conhecido como processamento em lote (batch), onde apenas uma tarefa era executada por vez. Esse cenário começou a mudar na década de 1960 com o surgimento da multiprogramação e do compartilhamento de tempo, permitindo que múltiplos programas residissem na memória simultaneamente. O grande marco desse período foi o desenvolvimento do Unix em 1969, um sistema robusto e multiusuário que serviu de base conceitual para quase todas as tecnologias de software que conhecemos hoje.</p>
+
+            <!-- Parágrafo 2: décadas de 1980 e 1990 (MS-DOS e Windows) -->
+            <p>A grande revolução para o usuário comum aconteceu na década de 1980 com a popularização dos computadores pessoais e o lançamento do MS-DOS pela Microsoft em 1981. O MS-DOS era um sistema monotarefa baseado puramente em linhas de comando, exigindo que as pessoas digitassem instruções em uma tela preta para gerenciar arquivos e executar programas. Apesar de sua interface primitiva, ele pavimentou o caminho para a era visual na década de 1990, quando a Microsoft lançou o Windows como um sistema operacional independente a partir da versão 95. O Windows revolucionou o mercado doméstico ao introduzir o Menu Iniciar e a facilidade do Plug and Play, evoluindo posteriormente para versões consagradas como o Windows XP e o Windows 7, até chegar aos atuais Windows 10 e 11, focados em segurança, computação em nuvem e telas sensíveis ao toque.</p>
+
+            <!-- Parágrafo 3: década de 1990 (Linux e código aberto) -->
+            <p>Paralelamente ao sucesso comercial da Microsoft, a década de 1990 também testemunhou o nascimento de uma filosofia que mudaria a tecnologia para sempre: o código aberto. Em 1991, o estudante Linus Torvalds criou o núcleo (kernel) do Linux baseado no Unix, disponibilizando seu código gratuitamente na internet para que programadores de todo o mundo pudessem colaborar no seu desenvolvimento. Essa cooperação global gerou diversas distribuições como o Debian, o Ubuntu e o Red Hat, tornando o Linux uma alternativa altamente estável e segura. Embora o Windows continue liderando computadores de mesa, o Linux tornou-se a espinha dorsal do mundo moderno, dominando de forma invisível a maioria dos servidores da internet, supercomputadores e servindo como a base estrutural do sistema móvel Android nos dias atuais.</p>
+
+        </section>
+
+
+        <!-- ========================================================
+             SECTION 5 — COMPARATIVO ENTRE SISTEMAS OPERACIONAIS
+             Tabela comparando Windows, macOS e Linux
+             ======================================================== -->
+        <section id="comparativo">
+
+            <!-- Título numerado do tópico 4 -->
+            <ol start="4">
+                <h2>
+                    <li>Comparativo entre Sistemas Operacionais</li>
+                </h2>
+            </ol>
+
+            <!-- Introdução do comparativo -->
+            <p>O mercado atual de computadores de mesa e notebooks é amplamente dominado por três grandes ecossistemas. A escolha entre eles depende diretamente das necessidades de hardware, do orçamento e do nível de conhecimento técnico do usuário.</p>
+
+            <p>A tabela abaixo apresenta um comparativo direto entre os sistemas operacionais mais populares do mercado:</p>
+
+            <!-- Tabela comparativa (estilizada pela classe "tabela-so" no CSS) -->
+            <table class="tabela-so">
+
+                <!-- Cabeçalho da tabela: nomes das colunas -->
+                <thead>
+                    <tr>
+                        <th>Sistema Operacional</th>
+                        <th>Interface</th>
+                        <th>Segurança</th>
+                        <th>Preço</th>
+                        <th>Facilidade de Uso</th>
+                        <th>Código-Fonte</th>
+                    </tr>
+                </thead>
+
+                <!-- Corpo da tabela: uma linha para cada sistema -->
+                <tbody>
+
+                    <!-- Linha: Windows -->
+                    <tr>
+                        <td><strong>Windows</strong></td>
+                        <td>Familiar, altamente customizável e focada em janelas e menus tradicionais.</td>
+                        <td>Moderada; por ser o mais usado, é o principal alvo de vírus e malwares.</td>
+                        <td>Pago (geralmente embutido no valor de novos computadores).</td>
+                        <td>Muito alta; intuitivo e com a maior compatibilidade de softwares.</td>
+                        <td>Fechado (proprietário da Microsoft).</td>
+                    </tr>
+
+                    <!-- Linha: macOS -->
+                    <tr>
+                        <td><strong>macOS</strong></td>
+                        <td>Minimalista, elegante e padronizada, com foco em animações fluidas.</td>
+                        <td>Alta; ecossistema fechado e arquitetura robusta contra ameaças comuns.</td>
+                        <td>Gratuito (porém restrito e exclusivo para computadores caros da Apple).</td>
+                        <td>Alta; muito amigável para o usuário comum e profissionais de criação.</td>
+                        <td>Fechado (proprietário da Apple, com base Unix de código aberto).</td>
+                    </tr>
+
+                    <!-- Linha: Linux -->
+                    <tr>
+                        <td><strong>Linux</strong></td>
+                        <td>Variada; depende da distribuição escolhida (pode imitar o Windows ou o macOS).</td>
+                        <td>Muito alta; permissões rígidas e arquitetura que dificultam infecções.</td>
+                        <td>Gratuito na grande maioria das distribuições e livre de licenças.</td>
+                        <td>Média a Alta; fácil nas versões modernas (Ubuntu), mas exige comandos para ajustes avançados.</td>
+                        <td>Aberto (qualquer um pode modificar e distribuir o código).</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </section>
+
+
+
+
+
+    
+
+
+    <!-- ============================================================
+         RODAPÉ
+         ============================================================ -->
+    <footer>
+        <p>&copy; Henrique da Paz Mendes</p>
+        <!-- Rodapé com meu nome -->
+    </footer>
+
+
+    <!-- ============================================================
+         JAVASCRIPT
+         Fica no final do body para carregar depois do conteúdo
+         ============================================================ -->
+    <script src="script.js"></script>
+    <!-- Conecta com o JavaScript que controla o comportamento da página -->
+
+</body>
+
+</html>

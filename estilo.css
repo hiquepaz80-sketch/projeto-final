@@ -1,0 +1,118 @@
+body {
+    background-image: url('logos_sistemas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+header {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    padding-top: 25px;
+    text-align: center;
+}
+
+
+footer {
+    text-align: center;
+    color: rgb(17, 17, 17);
+    font-family: Arial;
+}
+
+
+
+
+.a {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+
+.os {
+    text-align: left;
+    margin-top: 20px;
+}
+
+
+section {
+    margin-bottom: 50px;   
+}
+/* Faz a rolagem ser suave ao clicar nos botões */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Barra de botões */
+.menu {
+    display: flex;
+    flex-wrap: wrap;            /* quebra linha em telas pequenas */
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+/* Cada botão */
+.menu a {
+    background: white;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.623);
+    transition: transform 0.2s, background 0.2s;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);   /* fundo escuro pra o menu não sumir sobre a imagem */
+}
+
+/* Efeito ao passar o mouse */
+.menu a:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+/* Deixa um pequeno espaço no topo ao chegar na section */
+section {
+    scroll-margin-top: 20px;
+}
+/* Área dos botões de sistema operacional */
+.botoes-so {
+    display: flex;
+    flex-wrap: wrap;            /* quebra linha em telas pequenas */
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+/* Cada botão (mesmo estilo do menu) */
+.botoes-so input[type="button"] {
+    background: white;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.botoes-so input[type="button"]:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}

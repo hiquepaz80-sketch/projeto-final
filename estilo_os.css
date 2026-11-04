@@ -1,0 +1,26 @@
+header {
+    text-align: center;
+
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    padding-top: 25px;
+}
+
+body {
+    background-image: url('logos_sistemas.jpg');
+}
+
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}

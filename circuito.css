@@ -1,0 +1,130 @@
+/* ==================================================================
+   CIRCUITO.CSS — sections com aparência de placa de circuito
+   Link esta folha DEPOIS do CSS principal de cada página, assim:
+     <link rel="stylesheet" href="estilo.css">
+     <link rel="stylesheet" href="circuito.css">
+   ================================================================== */
+
+:root {
+    --azul-fundo-escuro: #0a1a3d;
+    --azul-fundo-medio: #173a7a;
+    --azul-fundo-claro: #1f4a96;
+    --azul-linha: #4da3ff;
+    --azul-brilho: #38bdf8;
+    --texto-claro: #e6f0ff;
+
+    /* Trilhas do canto superior esquerdo (linhas em 90°/45° + bolinhas) */
+    --trilha-tl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Cg fill='none' stroke='%234da3ff' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M0 14H110L128 32H196'/%3E%3Cpath d='M0 28H58L70 40H104'/%3E%3Cpath d='M16 0V38L28 50V58'/%3E%3Cpath d='M150 0V10L160 20H214'/%3E%3Ccircle cx='196' cy='32' r='4' fill='%230b1c3d'/%3E%3Ccircle cx='28' cy='58' r='3' fill='%230b1c3d'/%3E%3Ccircle cx='104' cy='40' r='3' fill='%2338bdf8' stroke='none'/%3E%3Ccircle cx='214' cy='20' r='2.5' fill='%2338bdf8' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+
+    /* Mesmas trilhas giradas 180° (canto inferior direito) */
+    --trilha-br: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Cg transform='rotate(180 120 32)' fill='none' stroke='%234da3ff' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M0 14H110L128 32H196'/%3E%3Cpath d='M0 28H58L70 40H104'/%3E%3Cpath d='M16 0V38L28 50V58'/%3E%3Cpath d='M150 0V10L160 20H214'/%3E%3Ccircle cx='196' cy='32' r='4' fill='%230b1c3d'/%3E%3Ccircle cx='28' cy='58' r='3' fill='%230b1c3d'/%3E%3Ccircle cx='104' cy='40' r='3' fill='%2338bdf8' stroke='none'/%3E%3Ccircle cx='214' cy='20' r='2.5' fill='%2338bdf8' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+/* ------------------------------------------------------------------
+   FUNDO DA PÁGINA — mesma coloração da imagem (azul-marinho com
+   brilho no centro e quadriculado de "papel milimetrado")
+   Se preferir usar a própria imagem, troque tudo por:
+   body { background: url("fundo.png") center / cover fixed; }
+   ------------------------------------------------------------------ */
+body {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+        radial-gradient(ellipse at 50% 50%, var(--azul-fundo-claro) 0%, var(--azul-fundo-medio) 40%, var(--azul-fundo-escuro) 100%);
+    background-attachment: fixed;
+    color: var(--texto-claro);
+}
+
+
+/* ------------------------------------------------------------------
+   SECTIONS — placa de circuito
+   Canto superior esquerdo e inferior direito: fundo da própria section
+   Canto superior direito e inferior esquerdo: ::before e ::after
+   ------------------------------------------------------------------ */
+section {
+    position: relative;
+    padding: 64px 48px;
+    margin: 32px auto;
+    border: 1px solid rgba(77, 163, 255, 0.55);
+    border-radius: 8px;
+    color: var(--texto-claro);
+
+    background:
+        var(--trilha-tl) left 0 top 0 / 240px 64px no-repeat,
+        var(--trilha-br) right 0 bottom 0 / 240px 64px no-repeat,
+        rgba(8, 22, 52, 0.82);
+
+    box-shadow:
+        0 0 14px rgba(56, 189, 248, 0.18),
+        inset 0 0 28px rgba(56, 189, 248, 0.06);
+}
+
+/* canto superior direito (trilhas espelhadas na horizontal) */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 64px;
+    background: var(--trilha-tl) no-repeat center / 100% 100%;
+    transform: scaleX(-1);
+    pointer-events: none;
+}
+
+/* canto inferior esquerdo (trilhas espelhadas na vertical) */
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    height: 64px;
+    background: var(--trilha-tl) no-repeat center / 100% 100%;
+    transform: scaleY(-1);
+    pointer-events: none;
+}
+
+/* Textos dentro da section ficam claros e legíveis sobre o fundo escuro */
+section h1,
+section h2,
+section h3,
+section p,
+section li,
+section strong {
+    color: var(--texto-claro);
+}
+
+section h1,
+section h2 {
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+}
+
+/* Tabela do comparativo combinando com o tema */
+section table {
+    border-color: rgba(77, 163, 255, 0.5);
+}
+
+section th,
+section td {
+    border: 1px solid rgba(77, 163, 255, 0.35);
+}
+
+section th {
+    background: rgba(31, 74, 150, 0.6);
+}
+
+/* Celular: trilhas menores e menos espaçamento */
+@media (max-width: 600px) {
+    section {
+        padding: 56px 20px;
+        background-size: 150px 40px, 150px 40px, auto;
+    }
+
+    section::before,
+    section::after {
+        width: 150px;
+        height: 40px;
+    }
+}

@@ -1,15 +1,19 @@
 function windowls() {
-    window.location.href = "https://www.microsoft.com/pt-br/windows/?r=1"
+    window.open("https://www.microsoft.com/pt-br/windows/?r=1", "_blank");
 }
+
 function macos() {
-    window.location.href = "https://www.apple.com/br/os/macos/"
+    window.open("https://www.apple.com/br/os/macos/", "_blank");
 }
+
 function linux() {
-    window.location.href = "https://linox-inoxidaveis.com.br/"
+    window.open("https://linox-inoxidaveis.com.br/", "_blank");
 }
+
 function android() {
-    window.location.href = "https://www.android.com/intl/pt_br/"
+    window.open("https://www.android.com/intl/pt_br/", "_blank");
 }
+
 function ios() {
-    window.location.href = "https://www.apple.com/br/os/ios/"
+    window.open("https://www.apple.com/br/os/ios/", "_blank");
 }

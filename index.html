@@ -43,7 +43,7 @@
          TOPO DA PÁGINA (HEADER)
          ============================================================ -->
     <header>
-        <h1>Bem Vindo</h1>
+        <div class="titulo"><h1>Bem Vindo</h1></div>
         <!-- Título principal da página -->
         <!-- ============================================================
          BOTÕES INTERATIVOS
@@ -70,28 +70,10 @@
         <a href="#comparativo">Comparativo</a>
     </nav>
 
-
-    <!-- ============================================================
-         ÁREA PRINCIPAL DO CONTEÚDO
-         O id="sac" foi mantido para o CSS continuar funcionando.
-         Dentro dela, cada tópico agora é uma <section> separada:
-           1) Proposta do Site
-           2) O que são Sistemas Operacionais?
-           3) Tipos de Sistemas Operacionais
-           4) História dos Sistemas Operacionais
-           5) Comparativo entre Sistemas Operacionais
-         ============================================================ -->
-
-
-
-    <!-- ========================================================
-             SECTION 1 — PROPOSTA DO SITE
-             Apresenta o que a pessoa vai aprender na página
-             ======================================================== -->
     <section id="proposta">
 
         <!-- Título da seção -->
-        <div class="titulo">
+        <div class="titulo2">
             <h1>
                 Proposta do Site
             </h1>
@@ -99,13 +81,14 @@
 
         <!-- Lista com os assuntos que serão abordados -->
         <p><strong>Aprender sobre:</strong></p>
-        <ul class="a">
+        <div class="a">
+         <ul>
             <li>O que são Sistemas Operacionais?</li>
             <li>Tipos de Sistemas Operacionais</li>
             <li>História dos Sistemas Operacionais</li>
             <li>Comparativo entre Sistemas Operacionais</li>
-        </ul>
-
+         </ul>
+        </div>
     </section>
 
 
@@ -152,7 +135,7 @@
             gráfica (com
             janelas e ícones, como o Windows) ou textual (por linhas de comando).
         </p>
-        <a href="os.html" class="botao">Saber Mais</a>
+        <a href="os.html">Saber Mais</a>
 
     </section>
 
@@ -280,6 +263,7 @@
              SECTION 5 — COMPARATIVO ENTRE SISTEMAS OPERACIONAIS
              Tabela comparando Windows, macOS e Linux
              ======================================================== -->
+    
     <section id="comparativo">
 
         <!-- Título numerado do tópico 4 -->
@@ -297,6 +281,7 @@
         <p>A tabela abaixo apresenta um comparativo direto entre os sistemas operacionais mais populares do mercado:</p>
 
         <!-- Tabela comparativa (estilizada pela classe "tabela-so" no CSS) -->
+      <div class="tabela">
         <table class="tabela-so">
 
             <!-- Cabeçalho da tabela: nomes das colunas -->
@@ -347,9 +332,9 @@
 
             </tbody>
         </table>
-
+      </div>
     </section>
-
+   
 
 
 

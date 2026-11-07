@@ -115,11 +115,35 @@ section th {
     background: rgba(31, 74, 150, 0.6);
 }
 
-/* Celular: trilhas menores e menos espaçamento */
-@media (max-width: 600px) {
+/* Celular: trilhas menores, menos espaçamento e largura flexível */
+@media (max-width: 700px) {
+
+    /* O "width: 500px" do estilo.css estourava a tela do celular.
+       Com width:auto a section ocupa a tela toda (menos as margens). */
     section {
+        width: auto;
+        margin: 24px 12px;
         padding: 56px 20px;
         background-size: 150px 40px, 150px 40px, auto;
+    }
+
+    /* "background-attachment: fixed" não funciona direito no celular
+       (o iOS ignora e o fundo estica). Solução: o fundo vira uma camada
+       fixa própria, que funciona em qualquer aparelho. */
+    body {
+        background: var(--azul-fundo-escuro);
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+            linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+            linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+            radial-gradient(ellipse at 50% 50%, var(--azul-fundo-claro) 0%, var(--azul-fundo-medio) 40%, var(--azul-fundo-escuro) 100%);
     }
 
     section::before,

@@ -152,3 +152,40 @@ a{
 .tabela-so td {
     font-size: 0.85rem;
 }
+
+/* ------------------------------------------------------------------
+   CELULAR (telas até 700px)
+   ------------------------------------------------------------------ */
+@media (max-width: 700px) {
+    .titulo {
+        font-size: 22px;
+    }
+
+    /* botões um pouco menores para caberem melhor na tela */
+    .menu a {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+
+    .botoes-so input[type="button"] {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+    }
+
+    /* A tabela tem 6 colunas: em vez de espremer tudo, ela mantém uma
+       largura mínima e o usuário rola para o lado dentro da section */
+    .tabela {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabela-so {
+        min-width: 640px;
+    }
+
+    .tabela-so th,
+    .tabela-so td {
+        padding: 6px 8px;
+        text-align: left;
+        vertical-align: top;
+    }
+}

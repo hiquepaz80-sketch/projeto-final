@@ -297,3 +297,29 @@ a {
     object-fit: cover;
     /* corta o excesso em vez de esticar */
 }
+
+@media (max-width: 700px) {
+    .sistema {
+        width: auto;              /* deixa de ter 800px */
+        flex-direction: column;   /* texto em cima, imagens embaixo */
+        align-items: stretch;
+    }
+
+    .sistema_texto {
+        flex: none;
+    }
+
+    .sistema_imagens {
+        align-self: auto;
+    }
+
+    .sistema_imagens img {
+        width: 100%;              /* acompanha a largura da tela */
+        height: auto;
+    }
+
+    .sistema_imagens img:first-child,
+    .sistema_imagens img:last-child {
+        margin-top: 0;            /* tira os 60px e 80px no celular */
+    }
+}

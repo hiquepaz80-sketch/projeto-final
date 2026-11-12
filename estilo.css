@@ -1,11 +1,11 @@
 body {
-    background-image: url('logos_sistemas.jpg');
+    background-image: url('/imagens/sistemas-operacionais.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
-    
+
 }
 
 
@@ -22,7 +22,7 @@ section {
     width: 500px;
     margin: auto;
     padding-top: 25px;
-    
+
 }
 
 
@@ -70,13 +70,15 @@ html {
 /* Cada botão */
 .menu a {
     background: white;
-    color: #ffffff;                                   /* ← era #000000 */
+    color: #ffffff;
+    /* ← era #000000 */
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: bold;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.623);
-    transition: transform 0.2s, background 0.2s, color 0.2s;   /* ← color incluído */
+    transition: transform 0.2s, background 0.2s, color 0.2s;
+    /* ← color incluído */
     position: sticky;
     top: 0;
     z-index: 10;
@@ -87,8 +89,10 @@ html {
 
 .menu a:hover,
 .menu a:active {
-    background: #ffffff;   /* ← era #ddd */
-    color: #000000;        /* letra preta */
+    background: #ffffff;
+    /* ← era #ddd */
+    color: #000000;
+    /* letra preta */
     transform: translateY(-2px);
 }
 
@@ -127,24 +131,28 @@ section {
     background: #ddd;
     transform: translateY(-2px);
 }
-.titulo{
+
+.titulo {
     color: #ddd;
     font-size: 26px;
     font-weight: normal;
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
 }
-a{
+
+a {
     color: #38bdf8;
     text-align: left;
 }
 
 .tabela {
     width: 100%;
-    overflow-x: auto;      /* se não couber, aparece rolagem lateral */
+    overflow-x: auto;
+    /* se não couber, aparece rolagem lateral */
 }
 
 .tabela-so {
-    width: 100%;           /* ocupa toda a largura disponível na section */
+    width: 100%;
+    /* ocupa toda a largura disponível na section */
     border-collapse: collapse;
 }
 
@@ -190,9 +198,102 @@ a{
     }
 }
 
-.aprender_sobre{
-  text-align: center;
+.aprender_sobre {
+    text-align: center;
 }
-.titulo2{
-  text-align: center;
+
+.titulo2 {
+    text-align: center;
+}
+
+.sistema {
+    display: flex;
+    flex-direction: row-reverse;
+    /* inverte a ordem visual */
+    align-items: flex-start;
+    gap: 20px;
+    width: 800px;
+}
+
+.sistema_imagens {
+    display: flex;
+    flex-direction: column;
+    /* uma embaixo da outra */
+    gap: 10px;
+    /* espaço entre as duas */
+    align-self: flex-start;
+    /* mantém o bloco no topo */
+}
+
+.sistema_imagens img {
+    width: 400px;
+    height: auto;
+}
+
+.sistema_imagens img:last-child {
+    margin-top: 80px;
+    /* empurra a segunda imagem para baixo */
+}
+
+.sistema_imagens img:first-child {
+    margin-top: 60px;
+    /* empurra a segunda imagem para baixo */
+}
+
+.sistema_texto {
+    flex: 1;
+}
+
+.windows img {
+    width: 80%;
+    /* ocupa a largura toda da section */
+    height: 150px;
+    /* baixinha */
+    object-fit: cover;
+    /* corta o excesso em vez de esticar */
+}
+
+.macos img {
+    width: 80%;
+    /* ocupa a largura toda da section */
+    height: 150px;
+    /* baixinha */
+    object-fit: cover;
+    /* corta o excesso em vez de esticar */
+}
+
+.linux img {
+    width: 80%;
+    /* ocupa a largura toda da section */
+    height: 150px;
+    /* baixinha */
+    object-fit: cover;
+    /* corta o excesso em vez de esticar */
+}
+
+.linux img {
+    width: 80%;
+    /* ocupa a largura toda da section */
+    height: 150px;
+    /* baixinha */
+    object-fit: cover;
+    /* corta o excesso em vez de esticar */
+}
+
+.android img {
+    width: 80%;
+    /* ocupa a largura toda da section */
+    height: 150px;
+    /* baixinha */
+    object-fit: cover;
+    /* corta o excesso em vez de esticar */
+}
+
+.ios img {
+    width: 80%;
+    /* ocupa a largura toda da section */
+    height: 150px;
+    /* baixinha */
+    object-fit: cover;
+    /* corta o excesso em vez de esticar */
 }

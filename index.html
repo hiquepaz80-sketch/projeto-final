@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="estilo.css">
     <!-- Conecta o HTML com o arquivo de estilo (CSS) -->
     <link rel="stylesheet" href="circuito.css">
-<link rel="icon" type="image/svg+xml" href="favicon-h.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon-h.svg">
 </head>
 
 
@@ -44,7 +44,9 @@
          TOPO DA PÁGINA (HEADER)
          ============================================================ -->
     <header>
-        <div class="titulo"><h1>Bem Vindo</h1></div>
+        <div class="titulo">
+            <h1>Bem Vindo</h1>
+        </div>
         <!-- Título principal da página -->
         <!-- ============================================================
          BOTÕES INTERATIVOS
@@ -81,14 +83,16 @@
         </div>
 
         <!-- Lista com os assuntos que serão abordados -->
-        <div class="aprender_sobre"><p><strong>Aprender sobre:</strong></p></div>
+        <div class="aprender_sobre">
+            <p><strong>Aprender sobre:</strong></p>
+        </div>
         <div class="a">
-         <ul>
-            <li>O que são Sistemas Operacionais?</li>
-            <li>Tipos de Sistemas Operacionais</li>
-            <li>História dos Sistemas Operacionais</li>
-            <li>Comparativo entre Sistemas Operacionais</li>
-         </ul>
+            <ul>
+                <li>O que são Sistemas Operacionais?</li>
+                <li>Tipos de Sistemas Operacionais</li>
+                <li>História dos Sistemas Operacionais</li>
+                <li>Comparativo entre Sistemas Operacionais</li>
+            </ul>
         </div>
     </section>
 
@@ -97,47 +101,56 @@
              SECTION 2 — O QUE SÃO SISTEMAS OPERACIONAIS?
              Explica o conceito, as funções e os componentes do SO
              ======================================================== -->
-    <section id="o-que-sao" class="os">
+    <section id="o-que-sao" class="os sistema">
+        <div class="sistema_texto">
+            <!-- Título numerado do tópico 1 -->
+            <ol>
+                <h2>
+                    <li>O que são Sistemas Operacionais?</li>
+                </h2>
+            </ol>
 
-        <!-- Título numerado do tópico 1 -->
-        <ol>
-            <h2>
-                <li>O que são Sistemas Operacionais?</li>
-            </h2>
-        </ol>
-
-        <!-- Parágrafo 1: definição geral do SO -->
-        <p>É o software essencial que conecta o hardware (peças físicas) aos aplicativos, funcionando como um gerente
-            que organiza os recursos para tudo funcionar perfeitamente.</p>
+            <!-- Parágrafo 1: definição geral do SO -->
+            <p>É o software essencial que conecta o hardware (peças físicas) aos aplicativos, funcionando como um
+                gerente
+                que organiza os recursos para tudo funcionar perfeitamente.</p>
 
 
-        <h3>Principais Funções:</h3>
-        <p>
-            <strong>Gerenciamento de Processos:</strong> Controla o uso do processador (CPU), permitindo rodar vários
-            programas ao mesmo
-            tempo.
-        </p>
-        <p>
-            <strong>Gerenciamento de Memória:</strong> Distribui e recupera o espaço da memória RAM conforme os
-            aplicativos são abertos
-            ou fechados.
-        </p>
-        <p>
-            <strong>Gerenciamento de Arquivos:</strong> Organiza a gravação e a leitura de dados em pastas no SSD ou HD.
+            <h3>Principais Funções:</h3>
+            <p>
+                <strong>Gerenciamento de Processos:</strong> Controla o uso do processador (CPU), permitindo rodar
+                vários
+                programas ao mesmo
+                tempo.
+            </p>
+            <p>
+                <strong>Gerenciamento de Memória:</strong> Distribui e recupera o espaço da memória RAM conforme os
+                aplicativos são abertos
+                ou fechados.
+            </p>
+            <p>
+                <strong>Gerenciamento de Arquivos:</strong> Organiza a gravação e a leitura de dados em pastas no SSD ou
+                HD.
 
-            Dispositivos de Entrada e Saída (E/S): Controla a comunicação com periféricos (mouse, teclado, impressora).
-        </p>
-        <h3>Componentes Essenciais:</h3>
-        <p>
-            <strong>Kernel:</strong> O núcleo do sistema; conversa diretamente com o hardware e cuida da segurança.
-        </p>
-        <p>
-            <strong>Interface do Usuário:</strong> A camada que permite a nossa interação com o computador, podendo ser
-            gráfica (com
-            janelas e ícones, como o Windows) ou textual (por linhas de comando).
-        </p>
-        <a href="os.html">Saber Mais</a>
-
+                Dispositivos de Entrada e Saída (E/S): Controla a comunicação com periféricos (mouse, teclado,
+                impressora).
+            </p>
+            <h3>Componentes Essenciais:</h3>
+            <p>
+                <strong>Kernel:</strong> O núcleo do sistema; conversa diretamente com o hardware e cuida da segurança.
+            </p>
+            <p>
+                <strong>Interface do Usuário:</strong> A camada que permite a nossa interação com o computador, podendo
+                ser
+                gráfica (com
+                janelas e ícones, como o Windows) ou textual (por linhas de comando).
+            </p>
+            <a href="os.html">Saber Mais</a>
+        </div>
+        <div class="sistema_imagens">
+            <img src="imagens/sistemas-operacionais.jpg">
+            <img src="imagens/sistema-imagem2.jpg">
+        </div>
     </section>
 
 
@@ -157,33 +170,53 @@
         <!-- ---------- Subtópico: Sistemas para Desktop ---------- -->
         <h2>Sistemas para Desktop</h2>
         <p>Focados em produtividade, entretenimento e uso diário com interfaces visuais:</p>
+
         <ul>
-            <li>Windows: O sistema operacional mais popular para computadores pessoais, desenvolvido pela Microsoft, com
+            <div class="windows">
+                <img src="imagens/windows-imagem.jpg">
+            </div>
+            <li>Windows: O sistema operacional mais popular para computadores pessoais, desenvolvido pela Microsoft,
+                com
                 ampla compatibilidade com jogos e softwares profissionais.</li>
 
             <p>
-                <li>macOS: Sistema exclusivo dos computadores da Apple, conhecido pela estabilidade, design de interface
-                    e segurança.</li>
+            <div class="macos">
+                <img src="imagens/macos.jpg">
+            </div>
+            <li>macOS: Sistema exclusivo dos computadores da Apple, conhecido pela estabilidade, design de
+                interface
+                e segurança.</li>
             </p>
             <p>
-                <li>Linux (Ubuntu, Fedora, Mint): Sistema de código aberto, gratuito, leve, altamente customizável e
-                    seguro.
-            </p>
+            <div class="linux">
+                <img src="imagens/linux.jpg">
+            </div>
+            <li>Linux (Ubuntu, Fedora, Mint): Sistema de código aberto, gratuito, leve, altamente customizável e
+                seguro.
+                </p>
         </ul>
 
         <!-- ---------- Subtópico: Sistemas Móveis e Embarcados ---------- -->
         <h2>Sistemas para Dispositivos Móveis e Embarcados</h2>
         <p>Focados em eficiência energética, conectividade e telas sensíveis ao toque:</p>
         <ul>
+            <div class="android">
+                <img src="imagens/android.jpg">
+            </div>
             <li>Android: Desenvolvido pela Google, é o sistema móvel mais utilizado, adotado por diversas marcas de
                 celulares devido à sua flexibilidade e personalização.
             </li>
             <p>
-                <li>iOS: Sistema exclusivo dos iPhones da Apple, caracterizado por seu ambiente controlado que prioriza
-                    a fluidez e a segurança de dados.</li>
+            <div class="ios">
+                <img src="imagens/ios.jpg">
+            </div>
+            <li>iOS: Sistema exclusivo dos iPhones da Apple, caracterizado por seu ambiente controlado que
+                prioriza
+                a fluidez e a segurança de dados.</li>
             </p>
             <p>
-                <li>Sistemas Embarcados: Sistemas simplificados dedicados a tarefas específicas em hardwares limitados,
+                <li>Sistemas Embarcados: Sistemas simplificados dedicados a tarefas específicas em hardwares
+                    limitados,
                     presentes em aparelhos domésticos, sistemas automotivos e relógios inteligentes.
                 </li>
             </p>
@@ -195,10 +228,12 @@
             Focados no processamento de grandes volumes de dados, segurança avançada e estabilidade contínua:
         </p>
         <ul>
-            <li>Linux para Servidores: Líder no mercado de servidores e computação em nuvem, amplamente utilizado devido
+            <li>Linux para Servidores: Líder no mercado de servidores e computação em nuvem, amplamente utilizado
+                devido
                 à sua estabilidade e segurança.</li>
             <p>
-                <li>Windows Server: Versão da Microsoft voltada para ambientes corporativos, utilizada no gerenciamento
+                <li>Windows Server: Versão da Microsoft voltada para ambientes corporativos, utilizada no
+                    gerenciamento
                     centralizado de redes, bancos de dados e permissões de segurança.</li>
             </p>
         </ul>
@@ -220,20 +255,29 @@
         </ol>
 
         <!-- Introdução curta do tópico -->
-        <p>A evolução dos Sistemas Operacionais (SO) acompanha diretamente o desenvolvimento do hardware. O que começou
+        <p>A evolução dos Sistemas Operacionais (SO) acompanha diretamente o desenvolvimento do hardware. O que
+            começou
             com salas inteiras cheias de válvulas hoje cabe no nosso bolso.</p>
 
         <!-- Subtítulo da linha do tempo -->
         <h2>Linha do Tempo: Os Marcos dos Sistemas Operacionais</h2>
 
         <!-- Parágrafo 1: décadas de 1950 e 1960 (batch, multiprogramação, Unix) -->
-        <p>A evolução dos sistemas operativos acompanha o desenvolvimento do hardware, transformando máquinas gigantescas em dispositivos que cabem no bolso. Nos anos 1950, os computadores não tinham sistema operacional e executavam apenas uma tarefa por vez por meio de cartões perfurados. Na década de 1960, surgiu a multiprogramação e o compartilhamento de tempo, tendo como grande marco a criação do Unix em 1969.</p>
+        <p>A evolução dos sistemas operativos acompanha o desenvolvimento do hardware, transformando máquinas
+            gigantescas em dispositivos que cabem no bolso. Nos anos 1950, os computadores não tinham sistema
+            operacional e executavam apenas uma tarefa por vez por meio de cartões perfurados. Na década de 1960,
+            surgiu a multiprogramação e o compartilhamento de tempo, tendo como grande marco a criação do Unix em
+            1969.</p>
 
         <!-- Parágrafo 2: décadas de 1980 e 1990 (MS-DOS e Windows) -->
-        <p>Nos anos 1980, o MS-DOS popularizou os computadores pessoais, embora exigisse o uso de comandos em tela preta. Essa realidade mudou nos anos 1990 com a chegada do Windows 95, que revolucionou o mercado ao introduzir uma interface visual acessível, com janelas, mouse e o Menu Iniciar.</p>
+        <p>Nos anos 1980, o MS-DOS popularizou os computadores pessoais, embora exigisse o uso de comandos em tela
+            preta. Essa realidade mudou nos anos 1990 com a chegada do Windows 95, que revolucionou o mercado ao
+            introduzir uma interface visual acessível, com janelas, mouse e o Menu Iniciar.</p>
 
         <!-- Parágrafo 3: década de 1990 (Linux e código aberto) -->
-        <p>Paralelamente, em 1991, Linus Torvalds criou o Linux, um sistema de código aberto baseado no Unix e desenvolvido de forma colaborativa. Hoje, o Linux atua nos bastidores como a espinha dorsal de servidores da internet, supercomputadores e da base estrutural do sistema Android.</p>
+        <p>Paralelamente, em 1991, Linus Torvalds criou o Linux, um sistema de código aberto baseado no Unix e
+            desenvolvido de forma colaborativa. Hoje, o Linux atua nos bastidores como a espinha dorsal de
+            servidores da internet, supercomputadores e da base estrutural do sistema Android.</p>
         <a href="historia.html" class="historia">Versão mais detalhada da História</a>
     </section>
 
@@ -242,7 +286,7 @@
              SECTION 5 — COMPARATIVO ENTRE SISTEMAS OPERACIONAIS
              Tabela comparando Windows, macOS e Linux
              ======================================================== -->
-    
+
     <section id="comparativo">
 
         <!-- Título numerado do tópico 4 -->
@@ -253,67 +297,71 @@
         </ol>
 
         <!-- Introdução do comparativo -->
-        <p>O mercado atual de computadores de mesa e notebooks é amplamente dominado por três grandes ecossistemas. A
-            escolha entre eles depende diretamente das necessidades de hardware, do orçamento e do nível de conhecimento
+        <p>O mercado atual de computadores de mesa e notebooks é amplamente dominado por três grandes ecossistemas.
+            A
+            escolha entre eles depende diretamente das necessidades de hardware, do orçamento e do nível de
+            conhecimento
             técnico do usuário.</p>
 
-        <p>A tabela abaixo apresenta um comparativo direto entre os sistemas operacionais mais populares do mercado:</p>
+        <p>A tabela abaixo apresenta um comparativo direto entre os sistemas operacionais mais populares do mercado:
+        </p>
 
         <!-- Tabela comparativa (estilizada pela classe "tabela-so" no CSS) -->
-      <div class="tabela">
-        <table class="tabela-so">
+        <div class="tabela">
+            <table class="tabela-so">
 
-            <!-- Cabeçalho da tabela: nomes das colunas -->
-            <thead>
-                <tr>
-                    <th>Sistema Operacional</th>
-                    <th>Interface</th>
-                    <th>Segurança</th>
-                    <th>Preço</th>
-                    <th>Facilidade de Uso</th>
-                    <th>Código-Fonte</th>
-                </tr>
-            </thead>
+                <!-- Cabeçalho da tabela: nomes das colunas -->
+                <thead>
+                    <tr>
+                        <th>Sistema Operacional</th>
+                        <th>Interface</th>
+                        <th>Segurança</th>
+                        <th>Preço</th>
+                        <th>Facilidade de Uso</th>
+                        <th>Código-Fonte</th>
+                    </tr>
+                </thead>
 
-            <!-- Corpo da tabela: uma linha para cada sistema -->
-            <tbody>
+                <!-- Corpo da tabela: uma linha para cada sistema -->
+                <tbody>
 
-                <!-- Linha: Windows -->
-                <tr>
-                    <td><strong>Windows</strong></td>
-                    <td>Familiar, altamente customizável e focada em janelas e menus tradicionais.</td>
-                    <td>Moderada; por ser o mais usado, é o principal alvo de vírus e malwares.</td>
-                    <td>Pago (geralmente embutido no valor de novos computadores).</td>
-                    <td>Muito alta; intuitivo e com a maior compatibilidade de softwares.</td>
-                    <td>Fechado (proprietário da Microsoft).</td>
-                </tr>
+                    <!-- Linha: Windows -->
+                    <tr>
+                        <td><strong>Windows</strong></td>
+                        <td>Familiar, altamente customizável e focada em janelas e menus tradicionais.</td>
+                        <td>Moderada; por ser o mais usado, é o principal alvo de vírus e malwares.</td>
+                        <td>Pago (geralmente embutido no valor de novos computadores).</td>
+                        <td>Muito alta; intuitivo e com a maior compatibilidade de softwares.</td>
+                        <td>Fechado (proprietário da Microsoft).</td>
+                    </tr>
 
-                <!-- Linha: macOS -->
-                <tr>
-                    <td><strong>macOS</strong></td>
-                    <td>Minimalista, elegante e padronizada, com foco em animações fluidas.</td>
-                    <td>Alta; ecossistema fechado e arquitetura robusta contra ameaças comuns.</td>
-                    <td>Gratuito (porém restrito e exclusivo para computadores caros da Apple).</td>
-                    <td>Alta; muito amigável para o usuário comum e profissionais de criação.</td>
-                    <td>Fechado (proprietário da Apple, com base Unix de código aberto).</td>
-                </tr>
+                    <!-- Linha: macOS -->
+                    <tr>
+                        <td><strong>macOS</strong></td>
+                        <td>Minimalista, elegante e padronizada, com foco em animações fluidas.</td>
+                        <td>Alta; ecossistema fechado e arquitetura robusta contra ameaças comuns.</td>
+                        <td>Gratuito (porém restrito e exclusivo para computadores caros da Apple).</td>
+                        <td>Alta; muito amigável para o usuário comum e profissionais de criação.</td>
+                        <td>Fechado (proprietário da Apple, com base Unix de código aberto).</td>
+                    </tr>
 
-                <!-- Linha: Linux -->
-                <tr>
-                    <td><strong>Linux</strong></td>
-                    <td>Variada; depende da distribuição escolhida (pode imitar o Windows ou o macOS).</td>
-                    <td>Muito alta; permissões rígidas e arquitetura que dificultam infecções.</td>
-                    <td>Gratuito na grande maioria das distribuições e livre de licenças.</td>
-                    <td>Média a Alta; fácil nas versões modernas (Ubuntu), mas exige comandos para ajustes avançados.
-                    </td>
-                    <td>Aberto (qualquer um pode modificar e distribuir o código).</td>
-                </tr>
+                    <!-- Linha: Linux -->
+                    <tr>
+                        <td><strong>Linux</strong></td>
+                        <td>Variada; depende da distribuição escolhida (pode imitar o Windows ou o macOS).</td>
+                        <td>Muito alta; permissões rígidas e arquitetura que dificultam infecções.</td>
+                        <td>Gratuito na grande maioria das distribuições e livre de licenças.</td>
+                        <td>Média a Alta; fácil nas versões modernas (Ubuntu), mas exige comandos para ajustes
+                            avançados.
+                        </td>
+                        <td>Aberto (qualquer um pode modificar e distribuir o código).</td>
+                    </tr>
 
-            </tbody>
-        </table>
-      </div>
+                </tbody>
+            </table>
+        </div>
     </section>
-   
+
 
 
 

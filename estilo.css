@@ -323,3 +323,6 @@ a {
 .tamanho_section{
     width: 42.7%
 }
+.centralizar{
+    text-align: center;
+}

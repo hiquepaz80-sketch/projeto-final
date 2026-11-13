@@ -1,13 +1,13 @@
 function windowls() {
-    window.open("https://pt.wikipedia.org/wiki/Microsoft_Windows", "_blank");
+    window.open("windows.html");
 }
 
 function macos() {
-    window.open("https://pt.wikipedia.org/wiki/Mac_OS_Classic", "_blank");
+    window.open("mac_os.html");
 }
 
 function linux() {
-    window.open("https://pt.wikipedia.org/wiki/Linux", "_blank");
+    window.open("linux.html");
 }
 
 function android() {

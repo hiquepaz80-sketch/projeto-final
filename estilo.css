@@ -212,7 +212,7 @@ a {
     /* inverte a ordem visual */
     align-items: flex-start;
     gap: 20px;
-    width: 800px;
+    width: 800px
 }
 
 .sistema_imagens {
@@ -245,7 +245,7 @@ a {
 }
 
 .windows img {
-    width: 80%;
+    width: 55%;
     /* ocupa a largura toda da section */
     height: 150px;
     /* baixinha */
@@ -254,7 +254,7 @@ a {
 }
 
 .macos img {
-    width: 80%;
+    width: 55%;
     /* ocupa a largura toda da section */
     height: 150px;
     /* baixinha */
@@ -263,16 +263,7 @@ a {
 }
 
 .linux img {
-    width: 80%;
-    /* ocupa a largura toda da section */
-    height: 150px;
-    /* baixinha */
-    object-fit: cover;
-    /* corta o excesso em vez de esticar */
-}
-
-.linux img {
-    width: 80%;
+    width: 55%;
     /* ocupa a largura toda da section */
     height: 150px;
     /* baixinha */
@@ -281,7 +272,7 @@ a {
 }
 
 .android img {
-    width: 80%;
+    width: 55%;
     /* ocupa a largura toda da section */
     height: 150px;
     /* baixinha */
@@ -290,7 +281,7 @@ a {
 }
 
 .ios img {
-    width: 80%;
+    width: 55%;
     /* ocupa a largura toda da section */
     height: 150px;
     /* baixinha */
@@ -328,4 +319,7 @@ a {
     section.sistema .sistema_imagens img:last-child {
         margin-top: 0;
     }
+}
+.tamanho_section{
+    width: 42.7%
 }

@@ -1,0 +1,9 @@
+/* ===== Fundo de circuito =====
+   As linhas animadas são desenhadas pelo energia.js.
+   Aqui fica só a cor de fundo e a cor do texto. */
+
+body {
+  margin: 0;
+  background-color: #050b1a; /* azul bem escuro */
+  color: #e6f1ff;            /* texto claro para dar leitura no fundo escuro */
+}

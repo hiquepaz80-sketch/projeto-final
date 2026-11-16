@@ -11,9 +11,12 @@ function linux() {
 }
 
 function android() {
-    window.open("https://pt.wikipedia.org/wiki/Android", "_blank");
+    window.open("android.html");
 }
 
 function ios() {
-    window.open("https://pt.wikipedia.org/wiki/IOS", "_blank");
+    window.open("iOS.html");
+}
+function botao_voltar(){
+    window.open("index.html")
 }

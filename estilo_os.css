@@ -24,3 +24,11 @@ body {
     text-decoration: none;
     border-radius: 6px;
 }
+.tamanho_section{
+    width: 42.7%
+}
+footer {
+    text-align: center;
+    color: rgb(253, 250, 250);
+    font-family: Arial;
+}

@@ -14,7 +14,7 @@
     <!-- Faz o site se adaptar bem em celular -->
 
     <title>Progeto Final</title> <!-- Título que aparece na aba do navegador -->
-<link rel="stylesheet" href="energia.css">
+    <link rel="stylesheet" href="energia.css">
     <link rel="stylesheet" href="estilo.css">
     <!-- Conecta o HTML com o arquivo de estilo (CSS) -->
     <link rel="stylesheet" href="circuito.css">
@@ -57,8 +57,8 @@
             <input type="button" value="windows" onclick="windowls()">
             <input type="button" value="macOS" onclick="macos()">
             <input type="button" value="linux" onclick="linux()">
-            <input type="button" value="android" onclick="android()" target="_blank">
-            <input type="button" value="ios" onclick="ios()" target="_blank">
+            <input type="button" value="android" onclick="android()">
+            <input type="button" value="ios" onclick="ios()">
         </div>
     </header>
     <!-- ============================================================
@@ -111,40 +111,45 @@
             </ol>
 
             <!-- Parágrafo 1: definição geral do SO -->
-            <p>É o software essencial que conecta o hardware (peças físicas) aos aplicativos, funcionando como um
-                gerente
-                que organiza os recursos para tudo funcionar perfeitamente.</p>
+            <div class="paragrafos">
+                <p>É o software essencial que conecta o hardware (peças físicas) aos aplicativos, funcionando como um
+                    gerente
+                    que organiza os recursos para tudo funcionar perfeitamente.</p>
 
 
-            <h3>Principais Funções:</h3>
-            <p>
-                <strong>Gerenciamento de Processos:</strong> Controla o uso do processador (CPU), permitindo rodar
-                vários
-                programas ao mesmo
-                tempo.
-            </p>
-            <p>
-                <strong>Gerenciamento de Memória:</strong> Distribui e recupera o espaço da memória RAM conforme os
-                aplicativos são abertos
-                ou fechados.
-            </p>
-            <p>
-                <strong>Gerenciamento de Arquivos:</strong> Organiza a gravação e a leitura de dados em pastas no SSD ou
-                HD.
+                <h3>Principais Funções:</h3>
+                <p>
+                    <strong>Gerenciamento de Processos:</strong> Controla o uso do processador (CPU), permitindo rodar
+                    vários
+                    programas ao mesmo
+                    tempo.
+                </p>
+                <p>
+                    <strong>Gerenciamento de Memória:</strong> Distribui e recupera o espaço da memória RAM conforme os
+                    aplicativos são abertos
+                    ou fechados.
+                </p>
+                <p>
+                    <strong>Gerenciamento de Arquivos:</strong> Organiza a gravação e a leitura de dados em pastas no
+                    SSD ou
+                    HD.
 
-                Dispositivos de Entrada e Saída (E/S): Controla a comunicação com periféricos (mouse, teclado,
-                impressora).
-            </p>
-            <h3>Componentes Essenciais:</h3>
-            <p>
-                <strong>Kernel:</strong> O núcleo do sistema; conversa diretamente com o hardware e cuida da segurança.
-            </p>
-            <p>
-                <strong>Interface do Usuário:</strong> A camada que permite a nossa interação com o computador, podendo
-                ser
-                gráfica (com
-                janelas e ícones, como o Windows) ou textual (por linhas de comando).
-            </p>
+                    Dispositivos de Entrada e Saída (E/S): Controla a comunicação com periféricos (mouse, teclado,
+                    impressora).
+                </p>
+                <h3>Componentes Essenciais:</h3>
+                <p>
+                    <strong>Kernel:</strong> O núcleo do sistema; conversa diretamente com o hardware e cuida da
+                    segurança.
+                </p>
+                <p>
+                    <strong>Interface do Usuário:</strong> A camada que permite a nossa interação com o computador,
+                    podendo
+                    ser
+                    gráfica (com
+                    janelas e ícones, como o Windows) ou textual (por linhas de comando).
+                </p>
+            </div>
             <a href="os.html">Saber Mais</a>
         </div>
         <div class="sistema_imagens">
@@ -169,75 +174,78 @@
 
         <!-- ---------- Subtópico: Sistemas para Desktop ---------- -->
         <h2>Sistemas para Desktop</h2>
-        <p>Focados em produtividade, entretenimento e uso diário com interfaces visuais:</p>
+        <div class="paragrafos">
+            <p>Focados em produtividade, entretenimento e uso diário com interfaces visuais:</p>
 
-        <ul>
-            <div class="windows">
-                <img src="imagens/windows-imagem.jpg">
-            </div>
-            <li>Windows: O sistema operacional mais popular para computadores pessoais, desenvolvido pela Microsoft,
-                com
-                ampla compatibilidade com jogos e softwares profissionais.</li>
+            <ul>
+                <div class="windows">
+                    <img src="imagens/windows-imagem.jpg">
+                </div>
+                <li>Windows: O sistema operacional mais popular para computadores pessoais, desenvolvido pela Microsoft,
+                    com
+                    ampla compatibilidade com jogos e softwares profissionais.</li>
 
-            <p>
-            <div class="macos">
-                <img src="imagens/macos.jpg">
-            </div>
-            <li>macOS: Sistema exclusivo dos computadores da Apple, conhecido pela estabilidade, design de
-                interface
-                e segurança.</li>
-            </p>
-            <p>
-            <div class="linux">
-                <img src="imagens/linux.jpg">
-            </div>
-            <li>Linux (Ubuntu, Fedora, Mint): Sistema de código aberto, gratuito, leve, altamente customizável e
-                seguro.
+                <p>
+                <div class="macos">
+                    <img src="imagens/macos.jpg">
+                </div>
+                <li>macOS: Sistema exclusivo dos computadores da Apple, conhecido pela estabilidade, design de
+                    interface
+                    e segurança.</li>
                 </p>
-        </ul>
-
+                <p>
+                <div class="linux">
+                    <img src="imagens/linux.jpg">
+                </div>
+                <li>Linux (Ubuntu, Fedora, Mint): Sistema de código aberto, gratuito, leve, altamente customizável e
+                    seguro.
+                    </p>
+            </ul>
+        </div>
         <!-- ---------- Subtópico: Sistemas Móveis e Embarcados ---------- -->
         <h2>Sistemas para Dispositivos Móveis e Embarcados</h2>
-        <p>Focados em eficiência energética, conectividade e telas sensíveis ao toque:</p>
-        <ul>
-            <div class="android">
-                <img src="imagens/android.jpg">
-            </div>
-            <li>Android: Desenvolvido pela Google, é o sistema móvel mais utilizado, adotado por diversas marcas de
-                celulares devido à sua flexibilidade e personalização.
-            </li>
-            <p>
-            <div class="ios">
-                <img src="imagens/ios.jpg">
-            </div>
-            <li>iOS: Sistema exclusivo dos iPhones da Apple, caracterizado por seu ambiente controlado que
-                prioriza
-                a fluidez e a segurança de dados.</li>
-            </p>
-            <p>
-                <li>Sistemas Embarcados: Sistemas simplificados dedicados a tarefas específicas em hardwares
-                    limitados,
-                    presentes em aparelhos domésticos, sistemas automotivos e relógios inteligentes.
+        <div class="paragrafos">
+            <p>Focados em eficiência energética, conectividade e telas sensíveis ao toque:</p>
+            <ul>
+                <div class="android">
+                    <img src="imagens/android.jpg">
+                </div>
+                <li>Android: Desenvolvido pela Google, é o sistema móvel mais utilizado, adotado por diversas marcas de
+                    celulares devido à sua flexibilidade e personalização.
                 </li>
-            </p>
-        </ul>
-
+                <p>
+                <div class="ios">
+                    <img src="imagens/ios.jpg">
+                </div>
+                <li>iOS: Sistema exclusivo dos iPhones da Apple, caracterizado por seu ambiente controlado que
+                    prioriza
+                    a fluidez e a segurança de dados.</li>
+                </p>
+                <p>
+                    <li>Sistemas Embarcados: Sistemas simplificados dedicados a tarefas específicas em hardwares
+                        limitados,
+                        presentes em aparelhos domésticos, sistemas automotivos e relógios inteligentes.
+                    </li>
+                </p>
+            </ul>
+        </div>
         <!-- ---------- Subtópico: Sistemas para Servidores ---------- -->
         <h2>Sistemas para Servidores</h2>
-        <p>
-            Focados no processamento de grandes volumes de dados, segurança avançada e estabilidade contínua:
-        </p>
-        <ul>
-            <li>Linux para Servidores: Líder no mercado de servidores e computação em nuvem, amplamente utilizado
-                devido
-                à sua estabilidade e segurança.</li>
+        <div class="paragrafos">
             <p>
-                <li>Windows Server: Versão da Microsoft voltada para ambientes corporativos, utilizada no
-                    gerenciamento
-                    centralizado de redes, bancos de dados e permissões de segurança.</li>
+                Focados no processamento de grandes volumes de dados, segurança avançada e estabilidade contínua:
             </p>
-        </ul>
-
+            <ul>
+                <li>Linux para Servidores: Líder no mercado de servidores e computação em nuvem, amplamente utilizado
+                    devido
+                    à sua estabilidade e segurança.</li>
+                <p>
+                    <li>Windows Server: Versão da Microsoft voltada para ambientes corporativos, utilizada no
+                        gerenciamento
+                        centralizado de redes, bancos de dados e permissões de segurança.</li>
+                </p>
+            </ul>
+        </div>
     </section>
 
 
@@ -255,29 +263,31 @@
         </ol>
 
         <!-- Introdução curta do tópico -->
-        <p>A evolução dos Sistemas Operacionais (SO) acompanha diretamente o desenvolvimento do hardware. O que
-            começou
-            com salas inteiras cheias de válvulas hoje cabe no nosso bolso.</p>
+        <div class="paragrafos">
+            <p>A evolução dos Sistemas Operacionais (SO) acompanha diretamente o desenvolvimento do hardware. O que
+                começou
+                com salas inteiras cheias de válvulas hoje cabe no nosso bolso.</p>
 
-        <!-- Subtítulo da linha do tempo -->
-        <h2>Linha do Tempo: Os Marcos dos Sistemas Operacionais</h2>
+            <!-- Subtítulo da linha do tempo -->
+            <h2>Linha do Tempo: Os Marcos dos Sistemas Operacionais</h2>
 
-        <!-- Parágrafo 1: décadas de 1950 e 1960 (batch, multiprogramação, Unix) -->
-        <p>A evolução dos sistemas operativos acompanha o desenvolvimento do hardware, transformando máquinas
-            gigantescas em dispositivos que cabem no bolso. Nos anos 1950, os computadores não tinham sistema
-            operacional e executavam apenas uma tarefa por vez por meio de cartões perfurados. Na década de 1960,
-            surgiu a multiprogramação e o compartilhamento de tempo, tendo como grande marco a criação do Unix em
-            1969.</p>
+            <!-- Parágrafo 1: décadas de 1950 e 1960 (batch, multiprogramação, Unix) -->
+            <p>A evolução dos sistemas operativos acompanha o desenvolvimento do hardware, transformando máquinas
+                gigantescas em dispositivos que cabem no bolso. Nos anos 1950, os computadores não tinham sistema
+                operacional e executavam apenas uma tarefa por vez por meio de cartões perfurados. Na década de 1960,
+                surgiu a multiprogramação e o compartilhamento de tempo, tendo como grande marco a criação do Unix em
+                1969.</p>
 
-        <!-- Parágrafo 2: décadas de 1980 e 1990 (MS-DOS e Windows) -->
-        <p>Nos anos 1980, o MS-DOS popularizou os computadores pessoais, embora exigisse o uso de comandos em tela
-            preta. Essa realidade mudou nos anos 1990 com a chegada do Windows 95, que revolucionou o mercado ao
-            introduzir uma interface visual acessível, com janelas, mouse e o Menu Iniciar.</p>
+            <!-- Parágrafo 2: décadas de 1980 e 1990 (MS-DOS e Windows) -->
+            <p>Nos anos 1980, o MS-DOS popularizou os computadores pessoais, embora exigisse o uso de comandos em tela
+                preta. Essa realidade mudou nos anos 1990 com a chegada do Windows 95, que revolucionou o mercado ao
+                introduzir uma interface visual acessível, com janelas, mouse e o Menu Iniciar.</p>
 
-        <!-- Parágrafo 3: década de 1990 (Linux e código aberto) -->
-        <p>Paralelamente, em 1991, Linus Torvalds criou o Linux, um sistema de código aberto baseado no Unix e
-            desenvolvido de forma colaborativa. Hoje, o Linux atua nos bastidores como a espinha dorsal de
-            servidores da internet, supercomputadores e da base estrutural do sistema Android.</p>
+            <!-- Parágrafo 3: década de 1990 (Linux e código aberto) -->
+            <p>Paralelamente, em 1991, Linus Torvalds criou o Linux, um sistema de código aberto baseado no Unix e
+                desenvolvido de forma colaborativa. Hoje, o Linux atua nos bastidores como a espinha dorsal de
+                servidores da internet, supercomputadores e da base estrutural do sistema Android.</p>
+        </div>
         <a href="historia.html" class="historia">Versão mais detalhada da História</a>
     </section>
 
@@ -297,15 +307,16 @@
         </ol>
 
         <!-- Introdução do comparativo -->
-        <p>O mercado atual de computadores de mesa e notebooks é amplamente dominado por três grandes ecossistemas.
-            A
-            escolha entre eles depende diretamente das necessidades de hardware, do orçamento e do nível de
-            conhecimento
-            técnico do usuário.</p>
+        <div class="paragrafos">
+            <p>O mercado atual de computadores de mesa e notebooks é amplamente dominado por três grandes ecossistemas.
+                A
+                escolha entre eles depende diretamente das necessidades de hardware, do orçamento e do nível de
+                conhecimento
+                técnico do usuário.</p>
 
-        <p>A tabela abaixo apresenta um comparativo direto entre os sistemas operacionais mais populares do mercado:
-        </p>
-
+            <p>A tabela abaixo apresenta um comparativo direto entre os sistemas operacionais mais populares do mercado:
+            </p>
+        </div>
         <!-- Tabela comparativa (estilizada pela classe "tabela-so" no CSS) -->
         <div class="tabela">
             <table class="tabela-so">

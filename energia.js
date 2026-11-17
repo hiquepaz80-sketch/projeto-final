@@ -1,20 +1,27 @@
-/* ===== Fundo de circuito: linhas de energia aleatórias =====
-   Cada linha nasce num lugar aleatório, anda numa direção, pode fazer
-   curvas (90° ou 45°) em momentos aleatórios e some quando o tempo
-   dela acaba, mesmo estando no meio da tela. */
+/* ===== Fundo de circuito: trilhas de placa de circuito =====
+   Cada trilha nasce em um ponto da grade, anda reto na horizontal ou
+   vertical e, de vez em quando, faz uma "dobra" padrão de placa:
+   45° -> trecho diagonal curto -> 45° de novo (virando 90° ou
+   fazendo um desvio e voltando à direção original).
+   Tudo anda em múltiplos da grade, então fica alinhado e organizado. */
 
 (function () {
   // Respeita quem desativou animações no sistema
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   // ---------- Ajustes (pode mexer nesses números) ----------
-  const COR_PONTA   = '120, 235, 255'; // cor da "cabeça" da linha (R, G, B)
-  const COR_MEIO    = '0, 200, 255';   // cor do meio
-  const COR_BRILHO  = '#00b7ff';       // brilho em volta
-  const VEL_MIN = 90,  VEL_MAX = 280;  // velocidade (pixels por segundo)
-  const TAM_MIN = 80,  TAM_MAX = 320;  // comprimento da linha
+  const COR_PONTA = '120, 235, 255'; // cor da "cabeça" da linha (R, G, B)
+  const COR_MEIO = '0, 200, 255';   // cor do meio
+  const COR_BRILHO = '#00b7ff';       // brilho em volta
+  const VEL_MIN = 90, VEL_MAX = 280;  // velocidade (pixels por segundo)
+  const TAM_MIN = 80, TAM_MAX = 320;  // comprimento da linha
   const VIDA_MIN = 1.5, VIDA_MAX = 7;  // quantos segundos ela vive
-  const RAIO_CURVA = 24;               // quão arredondada é a curva
+  const RAIO_CURVA = 10;               // arredondamento da dobra (0 = canto seco)
+  const GRADE = 40;                    // tamanho da grade (px): tudo se alinha a ela
+  const RETA_MIN = 2, RETA_MAX = 8;    // trecho reto, em quadradinhos da grade
+  const DIAG_MIN = 1, DIAG_MAX = 2;    // trecho diagonal, em quadradinhos da grade
+  const CHANCE_RETA_INFINITA = 0.2;    // chance de seguir reto até o fim
+  const CHANCE_VIRAR_90 = 0.5;         // dobra vira 90°; senão faz desvio e volta
   // ----------------------------------------------------------
 
   const canvas = document.createElement('canvas');
@@ -35,11 +42,24 @@
   const linhas = [];
 
   const aleatorio = (a, b) => a + Math.random() * (b - a);
+  const inteiro = (a, b) => Math.round(aleatorio(a, b));
   const sortear = (lista) => lista[Math.floor(Math.random() * lista.length)];
 
+  // distância do próximo trecho reto (múltiplo da grade)
+  function trechoReto() {
+    if (Math.random() < CHANCE_RETA_INFINITA) return Infinity;
+    return inteiro(RETA_MIN, RETA_MAX) * GRADE;
+  }
+
+  // distância do trecho diagonal (múltiplo da diagonal do quadradinho)
+  function trechoDiagonal() {
+    return inteiro(DIAG_MIN, DIAG_MAX) * GRADE * Math.SQRT2;
+  }
+
   function novaLinha() {
-    const x = aleatorio(0, w);
-    const y = aleatorio(0, h);
+    // nasce sempre em um cruzamento da grade
+    const x = inteiro(0, w / GRADE) * GRADE;
+    const y = inteiro(0, h / GRADE) * GRADE;
     return {
       x, y,
       ang: sortear([0, 90, 180, 270]),          // direção em graus
@@ -48,7 +68,9 @@
       vida: aleatorio(VIDA_MIN, VIDA_MAX),
       idade: 0,
       andou: 0,
-      ate: Math.random() < 0.25 ? Infinity : aleatorio(60, 320), // distância até a próxima curva
+      fase: 'reta',                              // 'reta' ou 'diagonal'
+      sinal: 1,                                  // lado da dobra (+1 ou -1)
+      ate: trechoReto(),                         // distância até a próxima dobra
       espera: aleatorio(0, 3),                   // atraso para aparecer
       pontos: [{ x, y }, { x, y }]
     };
@@ -76,6 +98,24 @@
     ajustarQuantidade();
   }
 
+  // Faz a dobra no padrão de placa
+  function dobrar(l) {
+    if (l.fase === 'reta') {
+      // 1ª metade da dobra: entra no trecho diagonal (45°)
+      l.sinal = sortear([-1, 1]);
+      l.ang += 45 * l.sinal;
+      l.fase = 'diagonal';
+      l.ate = trechoDiagonal();
+    } else {
+      // 2ª metade: sai da diagonal e volta para horizontal/vertical
+      // mesmo lado = vira 90° | lado oposto = desvio e segue na direção original
+      l.ang += (Math.random() < CHANCE_VIRAR_90 ? 45 : -45) * l.sinal;
+      l.fase = 'reta';
+      l.ate = trechoReto();
+    }
+    l.ang = ((l.ang % 360) + 360) % 360;
+  }
+
   function atualizar(l, dt) {
     if (l.espera > 0) {
       l.espera -= dt;
@@ -85,23 +125,33 @@
     l.idade += dt;
 
     // anda
-    const rad = (l.ang * Math.PI) / 180;
+    let rad = (l.ang * Math.PI) / 180;
     const d = l.vel * dt;
     l.x += Math.cos(rad) * d;
     l.y += Math.sin(rad) * d;
     l.andou += d;
 
+    // chegou a hora de dobrar? Volta até o canto exato, dobra e
+    // gasta a sobra do movimento já na nova direção (mantém tudo na grade)
+    if (l.andou >= l.ate) {
+      const sobra = l.andou - l.ate;
+      l.x -= Math.cos(rad) * sobra;
+      l.y -= Math.sin(rad) * sobra;
+      l.pontos[l.pontos.length - 1].x = l.x;
+      l.pontos[l.pontos.length - 1].y = l.y;
+
+      dobrar(l);
+      l.pontos.push({ x: l.x, y: l.y });
+
+      rad = (l.ang * Math.PI) / 180;
+      l.x += Math.cos(rad) * sobra;
+      l.y += Math.sin(rad) * sobra;
+      l.andou = sobra;
+    }
+
     const ponta = l.pontos[l.pontos.length - 1];
     ponta.x = l.x;
     ponta.y = l.y;
-
-    // faz uma curva de vez em quando
-    if (l.andou >= l.ate) {
-      l.ang += sortear([-90, -45, 45, 90]);
-      l.pontos.push({ x: l.x, y: l.y });
-      l.andou = 0;
-      l.ate = Math.random() < 0.3 ? Infinity : aleatorio(60, 320);
-    }
 
     // encurta a cauda para manter o comprimento
     let total = 0;

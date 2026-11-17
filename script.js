@@ -1,22 +1,22 @@
 function windowls() {
-    window.open("windows.html");
+    window.location.href = ("windows.html");
 }
 
 function macos() {
-    window.open("mac_os.html");
+    window.location.href = ("mac_os.html");
 }
 
 function linux() {
-    window.open("linux.html");
+    window.location.href = ("linux.html");
 }
 
 function android() {
-    window.open("android.html");
+    window.location.href = ("android.html");
 }
 
 function ios() {
-    window.open("iOS.html");
+    window.location.href = ("iOS.html");
 }
-function botao_voltar(){
-    window.open("index.html")
+function botao_voltar() {
+    window.location.href = ("index.html")
 }

@@ -10,9 +10,11 @@ section {
 body {
     background-image: url('logos_sistemas.jpg');
 }
-.tamanho_section{
+
+.tamanho_section {
     width: 42.7%
 }
+
 .botoes-so {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +23,7 @@ body {
     gap: 10px;
     padding: 15px;
 }
+
 .botoes-so input[type="button"] {
     background: white;
     color: #000;
@@ -38,4 +41,15 @@ body {
 .botoes-so input[type="button"]:hover {
     background: #ddd;
     transform: translateY(-2px);
+}
+
+.paragrafos {
+    text-align: justify;
+    line-height: 1.7;
+    word-spacing: 0px;
+    letter-spacing: 0.3px;
+}
+
+footer {
+    text-align: center;
 }

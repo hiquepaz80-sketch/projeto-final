@@ -1,5 +1,7 @@
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
@@ -9,6 +11,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
+
 
 }
 
@@ -26,6 +29,7 @@ section {
     width: 500px;
     margin: auto;
     padding-top: 25px;
+
 
 }
 
@@ -49,6 +53,7 @@ footer {
 .os {
     text-align: left;
     margin-top: 20px;
+
 }
 
 
@@ -230,17 +235,17 @@ a {
 }
 
 .sistema_imagens img {
-    width: 400px;
+    width: 350px;
     height: auto;
 }
 
 .sistema_imagens img:last-child {
-    margin-top: 80px;
+    margin-top: 150px;
     /* empurra a segunda imagem para baixo */
 }
 
 .sistema_imagens img:first-child {
-    margin-top: 60px;
+    margin-top: 150px;
     /* empurra a segunda imagem para baixo */
 }
 
@@ -298,7 +303,8 @@ a {
         width: auto;
         max-width: 100%;
         box-sizing: border-box;
-        flex-direction: column;    /* texto em cima, imagens embaixo */
+        flex-direction: column;
+        /* texto em cima, imagens embaixo */
         align-items: stretch;
         gap: 16px;
         padding: 48px 16px;
@@ -311,7 +317,8 @@ a {
 
     section.sistema .sistema_imagens {
         align-self: auto;
-        align-items: center;       /* imagens centralizadas */
+        align-items: center;
+        /* imagens centralizadas */
     }
 
     section.sistema .sistema_imagens img {
@@ -324,12 +331,15 @@ a {
         margin-top: 0;
     }
 }
-.tamanho_section{
+
+.tamanho_section {
     width: 42.7%
 }
-.centralizar{
+
+.centralizar {
     text-align: center;
 }
+
 @media (max-width: 700px) {
     section.tamanho_section {
         width: auto;
@@ -344,4 +354,25 @@ a {
     section img {
         max-width: 100%;
     }
+}
+
+.paragrafos {
+    text-align: justify;
+    line-height: 1.7;
+    word-spacing: 0px;
+    letter-spacing: 0.3px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: aparecer 1s ease;
 }

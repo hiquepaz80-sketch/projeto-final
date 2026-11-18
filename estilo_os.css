@@ -70,3 +70,18 @@ footer {
     word-spacing: 0px;
     letter-spacing: 0.3px;
 }
+@media (max-width: 700px) {
+    section.tamanho_section {
+        width: auto;
+        max-width: 100%;
+    }
+
+    section {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    section img {
+        max-width: 100%;
+    }
+}

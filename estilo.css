@@ -1,127 +1,166 @@
+/* ==================================================================
+   ESTILO.CSS — versão otimizada (estilo.css + circuito.css juntos)
+   ================================================================== */
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-body {
-    background-image: url('/imagens/sistemas-operacionais.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: Arial, Helvetica, sans-serif;
+:root {
+    --azul-fundo-escuro: #0a1a3d;
+    --azul-fundo-medio: #173a7a;
+    --azul-fundo-claro: #1f4a96;
+    --texto-claro: #e6f0ff;
 
+    /* Trilhas do canto superior esquerdo (linhas em 90°/45° + bolinhas) */
+    --trilha-tl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Cg fill='none' stroke='%234da3ff' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M0 14H110L128 32H196'/%3E%3Cpath d='M0 28H58L70 40H104'/%3E%3Cpath d='M16 0V38L28 50V58'/%3E%3Cpath d='M150 0V10L160 20H214'/%3E%3Ccircle cx='196' cy='32' r='4' fill='%230b1c3d'/%3E%3Ccircle cx='28' cy='58' r='3' fill='%230b1c3d'/%3E%3Ccircle cx='104' cy='40' r='3' fill='%2338bdf8' stroke='none'/%3E%3Ccircle cx='214' cy='20' r='2.5' fill='%2338bdf8' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
 
+    /* Mesmas trilhas giradas 180° (canto inferior direito) */
+    --trilha-br: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 64'%3E%3Cg transform='rotate(180 120 32)' fill='none' stroke='%234da3ff' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M0 14H110L128 32H196'/%3E%3Cpath d='M0 28H58L70 40H104'/%3E%3Cpath d='M16 0V38L28 50V58'/%3E%3Cpath d='M150 0V10L160 20H214'/%3E%3Ccircle cx='196' cy='32' r='4' fill='%230b1c3d'/%3E%3Ccircle cx='28' cy='58' r='3' fill='%230b1c3d'/%3E%3Ccircle cx='104' cy='40' r='3' fill='%2338bdf8' stroke='none'/%3E%3Ccircle cx='214' cy='20' r='2.5' fill='%2338bdf8' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* Rolagem suave ao clicar nos botões do menu */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto-claro);
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+        radial-gradient(ellipse at 50% 50%, var(--azul-fundo-claro) 0%, var(--azul-fundo-medio) 40%, var(--azul-fundo-escuro) 100%);
+    background-attachment: fixed;
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 header {
     color: rgb(0, 0, 0);
     text-align: center;
 }
 
-
-section {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 500px;
-    margin: auto;
-    padding-top: 25px;
-
-
-}
-
-
 footer {
     text-align: center;
     color: rgb(253, 250, 250);
-    font-family: Arial;
 }
 
-
-
-
-.a {
-    list-style-position: inside;
-    padding-left: 0;
-    text-align: left;
-}
-
-
-.os {
-    text-align: left;
-    margin-top: 20px;
-
-}
-
-
+/* ===== Sections — aparência de placa de circuito ===== */
 section {
-    margin-bottom: 50px;
+    position: relative;
+    width: 500px;
+    margin: 32px auto;
+    padding: 64px 48px;
+    border: 1px solid rgba(77, 163, 255, 0.55);
+    border-radius: 8px;
+    color: var(--texto-claro);
+    scroll-margin-top: 20px;
+    background:
+        var(--trilha-tl) left 0 top 0 / 240px 64px no-repeat,
+        var(--trilha-br) right 0 bottom 0 / 240px 64px no-repeat,
+        rgba(8, 22, 52, 0.82);
+    box-shadow:
+        0 0 14px rgba(56, 189, 248, 0.18),
+        inset 0 0 28px rgba(56, 189, 248, 0.06);
 }
 
-/* Faz a rolagem ser suave ao clicar nos botões */
-html {
-    scroll-behavior: smooth;
+/* canto superior direito (trilhas espelhadas na horizontal) */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 64px;
+    background: var(--trilha-tl) no-repeat center / 100% 100%;
+    transform: scaleX(-1);
+    pointer-events: none;
 }
 
-/* Barra de botões */
+/* canto inferior esquerdo (trilhas espelhadas na vertical) */
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    height: 64px;
+    background: var(--trilha-tl) no-repeat center / 100% 100%;
+    transform: scaleY(-1);
+    pointer-events: none;
+}
+
+section li {
+    color: var(--texto-claro);
+}
+
+section h1,
+section h2 {
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+}
+
+section table {
+    border-color: rgba(77, 163, 255, 0.5);
+}
+
+section th,
+section td {
+    border: 1px solid rgba(77, 163, 255, 0.35);
+}
+
+section th {
+    background: rgba(31, 74, 150, 0.6);
+}
+
+/* ===== Menu ===== */
 .menu {
     display: flex;
     flex-wrap: wrap;
-    /* quebra linha em telas pequenas */
     justify-content: center;
     gap: 10px;
     padding: 15px;
 }
 
-/* Cada botão */
 .menu a {
-    background: white;
+    background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
-    /* ← era #000000 */
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: bold;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.623);
     transition: transform 0.2s, background 0.2s, color 0.2s;
-    /* ← color incluído */
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.6);
 }
-
-
 
 .menu a:hover,
 .menu a:active {
     background: #ffffff;
-    /* ← era #ddd */
     color: #000000;
-    /* letra preta */
     transform: translateY(-2px);
 }
 
-
-/* Deixa um pequeno espaço no topo ao chegar na section */
-section {
-    scroll-margin-top: 20px;
-}
-
-/* Área dos botões de sistema operacional */
+/* ===== Botões de sistema operacional ===== */
 .botoes-so {
     display: flex;
     flex-wrap: wrap;
-    /* quebra linha em telas pequenas */
     justify-content: center;
     gap: 10px;
     padding: 15px;
 }
 
-/* Cada botão (mesmo estilo do menu) */
 .botoes-so input[type="button"] {
     background: white;
     color: #000;
@@ -135,12 +174,12 @@ section {
     transition: transform 0.2s, background 0.2s;
 }
 
-/* Efeito ao passar o mouse */
 .botoes-so input[type="button"]:hover {
     background: #ddd;
     transform: translateY(-2px);
 }
 
+/* ===== Textos ===== */
 .titulo {
     color: #ddd;
     font-size: 26px;
@@ -148,20 +187,38 @@ section {
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
 }
 
-a {
-    color: #38bdf8;
+.a {
+    list-style-position: inside;
+    padding-left: 0;
     text-align: left;
+    color: #38bdf8;
 }
 
+.os {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.aprender_sobre,
+.titulo2,
+.centralizar {
+    text-align: center;
+}
+
+.paragrafos {
+    text-align: justify;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+/* ===== Tabela ===== */
 .tabela {
     width: 100%;
     overflow-x: auto;
-    /* se não couber, aparece rolagem lateral */
 }
 
 .tabela-so {
     width: 100%;
-    /* ocupa toda a largura disponível na section */
     border-collapse: collapse;
 }
 
@@ -170,68 +227,20 @@ a {
     font-size: 0.85rem;
 }
 
-/* ------------------------------------------------------------------
-   CELULAR (telas até 700px)
-   ------------------------------------------------------------------ */
-@media (max-width: 700px) {
-    .titulo {
-        font-size: 22px;
-    }
-
-    /* botões um pouco menores para caberem melhor na tela */
-    .menu a {
-        padding: 8px 14px;
-        font-size: 0.9rem;
-    }
-
-    .botoes-so input[type="button"] {
-        padding: 8px 16px;
-        font-size: 0.95rem;
-    }
-
-    /* A tabela tem 6 colunas: em vez de espremer tudo, ela mantém uma
-       largura mínima e o usuário rola para o lado dentro da section */
-    .tabela {
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .tabela-so {
-        min-width: 640px;
-    }
-
-    .tabela-so th,
-    .tabela-so td {
-        padding: 6px 8px;
-        text-align: left;
-        vertical-align: top;
-    }
-}
-
-.aprender_sobre {
-    text-align: center;
-}
-
-.titulo2 {
-    text-align: center;
-}
-
+/* ===== Seção de sistema (texto + imagens) ===== */
 .sistema {
     display: flex;
     flex-direction: row-reverse;
-    /* inverte a ordem visual */
     align-items: flex-start;
     gap: 20px;
-    width: 800px
+    width: 800px;
 }
 
 .sistema_imagens {
     display: flex;
     flex-direction: column;
-    /* uma embaixo da outra */
     gap: 10px;
-    /* espaço entre as duas */
     align-self: flex-start;
-    /* mantém o bloco no topo */
 }
 
 .sistema_imagens img {
@@ -239,72 +248,80 @@ a {
     height: auto;
 }
 
+.sistema_imagens img:first-child,
 .sistema_imagens img:last-child {
     margin-top: 150px;
-    /* empurra a segunda imagem para baixo */
-}
-
-.sistema_imagens img:first-child {
-    margin-top: 150px;
-    /* empurra a segunda imagem para baixo */
 }
 
 .sistema_texto {
     flex: 1;
 }
 
-.windows img {
-    width: 55%;
-    /* ocupa a largura toda da section */
-    height: 150px;
-    /* baixinha */
-    object-fit: cover;
-    /* corta o excesso em vez de esticar */
-}
-
-.macos img {
-    width: 55%;
-    /* ocupa a largura toda da section */
-    height: 150px;
-    /* baixinha */
-    object-fit: cover;
-    /* corta o excesso em vez de esticar */
-}
-
-.linux img {
-    width: 55%;
-    /* ocupa a largura toda da section */
-    height: 150px;
-    /* baixinha */
-    object-fit: cover;
-    /* corta o excesso em vez de esticar */
-}
-
-.android img {
-    width: 55%;
-    /* ocupa a largura toda da section */
-    height: 150px;
-    /* baixinha */
-    object-fit: cover;
-    /* corta o excesso em vez de esticar */
-}
-
+/* Imagem de cada sistema (todas com o mesmo estilo) */
+.windows img,
+.macos img,
+.linux img,
+.android img,
 .ios img {
     width: 55%;
-    /* ocupa a largura toda da section */
     height: 150px;
-    /* baixinha */
     object-fit: cover;
-    /* corta o excesso em vez de esticar */
 }
 
+.tamanho_section {
+    width: 42.7%;
+}
+
+/* ==================================================================
+   CELULAR (telas até 700px) — todos os ajustes juntos
+   ================================================================== */
 @media (max-width: 700px) {
+
+    /* "background-attachment: fixed" não funciona direito no celular
+       (o iOS ignora). O fundo vira uma camada fixa própria. */
+    body {
+        background: var(--azul-fundo-escuro);
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+            linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+            linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 60px 60px,
+            radial-gradient(ellipse at 50% 50%, var(--azul-fundo-claro) 0%, var(--azul-fundo-medio) 40%, var(--azul-fundo-escuro) 100%);
+    }
+
+    section {
+        width: auto;
+        margin: 24px 12px;
+        padding: 56px 20px;
+        background-size: 150px 40px, 150px 40px, auto;
+        overflow-wrap: break-word;
+    }
+
+    section::before,
+    section::after {
+        width: 150px;
+        height: 40px;
+    }
+
+    section img {
+        max-width: 100%;
+    }
+
+    section.tamanho_section {
+        width: auto;
+        max-width: 100%;
+    }
+
     section.sistema {
         width: auto;
         max-width: 100%;
-        box-sizing: border-box;
         flex-direction: column;
-        /* texto em cima, imagens embaixo */
         align-items: stretch;
         gap: 16px;
         padding: 48px 16px;
@@ -318,7 +335,6 @@ a {
     section.sistema .sistema_imagens {
         align-self: auto;
         align-items: center;
-        /* imagens centralizadas */
     }
 
     section.sistema .sistema_imagens img {
@@ -330,49 +346,35 @@ a {
     section.sistema .sistema_imagens img:last-child {
         margin-top: 0;
     }
-}
 
-.tamanho_section {
-    width: 42.7%
-}
-
-.centralizar {
-    text-align: center;
-}
-
-@media (max-width: 700px) {
-    section.tamanho_section {
-        width: auto;
-        max-width: 100%;
+    .titulo {
+        font-size: 22px;
     }
 
-    section {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
+    .menu a {
+        padding: 8px 14px;
+        font-size: 0.9rem;
     }
 
-    section img {
-        max-width: 100%;
-    }
-}
-
-.paragrafos {
-    text-align: justify;
-    line-height: 1.7;
-    word-spacing: 0px;
-    letter-spacing: 0.3px;
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
+    .botoes-so input[type="button"] {
+        padding: 8px 16px;
+        font-size: 0.95rem;
     }
 
-    to {
-        opacity: 1;
+    /* Tabela de 6 colunas: mantém largura mínima e rola para o lado */
+    .tabela-so {
+        min-width: 640px;
+    }
+
+    .tabela-so th,
+    .tabela-so td {
+        padding: 6px 8px;
+        text-align: left;
+        vertical-align: top;
     }
 }
 
-body {
-    animation: aparecer 1s ease;
+/* Botões links*/
+a {
+    color: #38bdf8;
 }
